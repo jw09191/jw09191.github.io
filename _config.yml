@@ -1,17 +1,17 @@
 # Site settings
-title:          Tale
+title:          Grayscale
 description:    "Minimal Jekyll theme for storytellers"
-baseurl:        "/tale"
-url:            "https://chesterhow.github.io"
+baseurl:        ""
+url:            "https://jw09191.github.io"
 
 # Google Analytics
 google_analytics: UA—XXXXXXXX-X
 
 # Author
 author:
-  name:         Chester How
+  name:         jw
   url:          https://chester.how
-  email:        chesterhow@gmail.com
+  email:        jw09191@gmail.com
 
 # Build settings
 markdown:       kramdown

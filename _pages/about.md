@@ -5,7 +5,11 @@ author: "jw"
 permalink: /about/
 ---
 
-I'm a Ph.D. candidate at Yonsei University, advised by Professor [Sanghoon Lee](http://insight.yonsei.ac.kr/gnuboard/).
+I am a Ph.D. candidate at Yonsei University, advised by Professor [Sanghoon Lee](http://insight.yonsei.ac.kr/gnuboard/).
+My recent interest is studying how machines can be made to mimic what the human visual system can do
+(e.g., scene understanding, object localization, action recognition and image/video restoration) in order to make them see the world.
+
+For more check out my [CV](/_pages/Resume.pdf) and contact me by [e-mail](mailto:jw09191@yonsei.ac.kr)
 
 Thanks for visiting!
 

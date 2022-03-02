@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Reference-Based Sketch Image Colorization using Augmented-Self Reference and Dense Semantic Correspondence</title>
+    <style type="text/css">
+    .center {
+        text-align: center;
+    }
+
+    .lead {
+        font-size: 1.0rem;
+        font-family: Georgia, "Times New Roman", Times, serif;
+    }
+
+    .author {
+        font-size: 1.1rem;
+    }
+
+    .figure-caption {
+        color: #6c757d;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="margin-top:20px;">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <center>
+                    <h2 style="margin: 20px;">Reference-Based Sketch Image Colorization <br> using Augmented-Self Reference and Dense Semantic Correspondence</h2>
+                    <h4>CVPR 2020</h4>
+                    <!-- author -->
+                    <div class="row author">
+                        <div class="col-sm-4">
+                            <a href="http://ssuhan.github.io/">Junsoo Lee</a>*
+                            <div class="font-italic">junsoolee93@kaist.ac.kr</div>
+                            KAIST
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="https://github.com/EungyeupKim">Eungyeup Kim*</a>
+                            <div class="font-italic">eykim94@kaist.ac.kr</div>
+                            KAIST
+                        </div>
+                        <div class="col-sm-4">
+                            <!-- <a href="https://sunghyo.github.io">Sunghyo Chung</a> -->
+                            Yunsung Lee
+                            <div class="font-italic">swack9751@korea.ac.kr</div>
+                            Korea University
+                        </div>
+                    </div>
+                    <div class="row author" style="margin-top:18px;">
+                        <div class="col-sm-4">
+                            <a href="https://github.com/rassilon712">Dongjun Kim</a>
+                            <div class="font-italic">rassilon@kaist.ac.kr</div>
+                            KAIST
+                        </div>
+                        <div class="col-sm-4">
+                            Jaehyuk Chang
+                            <br>
+                            NAVER Webtoon Corp.
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a>
+                            <br>
+                            KAIST
+                        </div>
+                    </div>
+                </center>
+                <!-- Teaser -->
+                <center>
+                    <figure class="figure">
+                        <img src="./figs/4803-teaser.gif" class="figure-img img-fluid" alt="teaser image" style="margin:20px 0px;">
+                        <figcaption class="figure-caption text-justify">
+                            Figure 1: Qualitative results on the various datasets (real-world, human face, comics, etc, ...) with our fully-automatic reference-based colorization model. Each row has the same content while each column has the same reference.
+                        </figcaption>
+                    </figure>
+                </center>
+                <!-- Abstract -->
+                <hr>
+                <div>
+                    <h3>Abstract</h3>
+                    <p class="lead text-justify">
+                        This paper tackles the automatic colorization task of a sketch image given an already-colored reference image. Colorizing a sketch image is in high demand in comics, animation, and other content creation applications, but it suffers from information scarcity of a sketch image. To address this, a reference image can render the colorization process in a reliable and user-driven manner. However, it is difficult to prepare for a training data set that has a sufficient amount of semantically meaningful pairs of images as well as the ground truth for a colored image reflecting a given reference (e.g., coloring a sketch of an originally blue car given a reference green car). To tackle this challenge, we propose to utilize the identical image with geometric distortion as a virtual reference, which makes it possible to secure the ground truth for a colored output image. Furthermore, it naturally provides the ground truth for dense semantic correspondence, which we utilize in our internal attention mechanism for color transfer from reference to sketch input. We demonstrate the effectiveness of our approach in various types of sketch image colorization via quantitative as well as qualitative evaluation against existing methods.
+                    </p>
+                </div>
+                <hr>
+                <div>
+                    <h3>Paper and Supplementary Material</h3>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src="./figs/paper.png" class="img-fluid border" alt="" style="margin:20px;">
+                        </div>
+                        <div class="col" style="margin-top: auto; margin-bottom: auto;">
+                            <div class="align-middle">
+                                <a href="https://arxiv.org/abs/2005.05207">[Paper]</a>
+                                <a href="https://scholar.googleusercontent.com/scholar.bib?q=info:3syu6fizQcYJ:scholar.google.com/&output=citation&scisdr=CgVb7RezEMvZ4zVDrX8:AAGBfm0AAAAAXudGtX8XEpHQ7ppftvlFMwUPtLgbGVXv&scisig=AAGBfm0AAAAAXudGtTSBHbdETWqFmYD91v8cMj_a6eWU&scisf=4&ct=citation&cd=-1&hl=ko">[Bibtex]</a>
+                                <a href="https://drive.google.com/file/d/1xu-V6khowTvzXAkD2tY1-gBB7g-RFfGy/view?usp=sharing">[Video]</a>
+                                <a href="https://drive.google.com/file/d/1FVFqhogxTzPwV-ay0UIoRHqmlkNQsQS3/view?usp=sharing">[Slide]</a>
+                                <a href="">[Github]</a>
+                                <p class="lead">
+                                    Paper <br>
+                                    CVPR, 2020.
+                                    <br>
+                                    Lee, Junsoo and Kim, Eungyeup and Lee, Yunsung and Kim, Dongjun and Chang, Jaehyuk and Choo, Jaegul. "Reference-Based Sketch Image Colorization Using Augmented-Self Reference and Dense Semantic Correspondence"
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <h3>Method overview</h3>
+                    <center>
+                        <figure class="figure">
+                            <img src="./figs/main_arch_1.png" class="figure-img img-fluid" alt="Responsive image" style="margin:0px;">
+                            <figcaption class="figure-caption text-justify">
+                                <center>
+                                    Figure 2: Overview of our proposed method.
+                                </center>
+                            </figcaption>
+                        </figure>
+                    </center>
+                    <p class="lead text-justify align-middle">
+                        As illustrated in Figure 2, given a color image in our dataset, we first convert it into its sketch image using an outline extractor. Additionally, we generate an augmented-self reference image by applying the spaital transformation and color jittering. By this method, we can obtain the reference image that contains enough semantics of objects of the original while preventing the model from learning trivial copy operation. Afterwards, our model creates a colored image by using features which are transfered from the refernce encoder (Figure 3).
+                    </p>
+                    <center>
+                        <figure class="figure">
+                            <img src="./figs/main_arch_2.png" class="figure-img img-fluid" alt="Responsive image" style="margin:0px;">
+                            <figcaption class="figure-caption text-justify">
+                                <center>
+                                    Figure 3: Overview of our spatially corresponding feature transfer (SCFT) module.
+                                </center>
+                            </figcaption>
+                        </figure>
+                    </center>
+                    <p class="lead text-justify align-middle">
+                        In order to transfer the information from the reference to the source image, we present a SCFT module inspired by a recently proposed self-attention mechanism, which computes dense correspondneces between every pixel pair of reference to source image. The goal of this module is to learn (1) which part of a refernce image to bring the information from as well as (2) which part of a sketch image to transfer such information to, i.e., transferring the information from where to where. Once obtaining this information as an attention map, our model transfers the feature information from a particular region of a reference to its semantically corresponding pixel of the given sketch. Based on these visual mappings obtained from SCFT, context features fusing the information between the reference and the source passes through several residual blocks and U-net-based decoder sequentially to generate the final colored output.
+                    </p>
+                </div>
+                <hr>
+                <div>
+                    <h3>Additional Results</h3>
+                    <center>
+                        <figure class="figure">
+                            <img src="./figs/comp_main.png" class="figure-img img-fluid" alt="Responsive image">
+                            <figcaption class="figure-caption text-justify">
+                                    Figure 4. Qualitative comparison of colorize results with the baselines trained on the wide range of datasets. Note that the goal of our task does not reconstruct the original image. All results are generated from the unseen images. Please refer to the supplementary material for details.
+                            </figcaption>
+                        </figure>
+                    </center>
+                    <center>
+                        <figure class="figure">
+                            <img src="./figs/result_yumi.png" class="figure-img img-fluid" alt="Responsive image">
+                            <figcaption class="figure-caption text-justify">
+                                    Figure 5. Qualitative comparisons with baselines on the Yumi’s Cells dataset
+                            </figcaption>
+                        </figure>
+                    </center>
+                    <center>
+                        <figure class="figure">
+                            <img src="./figs/result_vis.png" class="figure-img img-fluid" alt="Responsive image">
+                            <figcaption class="figure-caption text-justify">
+                                    Figure 6. The visualization of attention maps on CelebA and Tag2pix dataset. The colored squares on the second column indicate the query region and corresponding key regions are highlighted in the next four columns. The different color of square means the different query region, and each red, blue, yellow, and green corresponds with the column (a), (b), (c), and (d), respectively.                                
+                            </figcaption>
+                           
+                        </figure>
+                    </center>
+                </div>
+                <div>
+                    <h3>Citation</h3>
+                    @InProceedings{Lee_2020_CVPR, <br>
+                                    author = {Lee, Junsoo and Kim, Eungyeup and Lee, Yunsung and Kim, Dongjun and Chang, Jaehyuk and Choo, Jaegul}, <br>
+                                    title = {Reference-Based Sketch Image Colorization Using Augmented-Self Reference and Dense Semantic Correspondence}, <br>
+                                    booktitle = {The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, <br>
+                                    month = {June}, <br>
+                                    year = {2020}} <br>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

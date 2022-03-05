@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Hand-Object Contact Consistency Reasoning for Human Grasps Generation">
+    <meta name="author" content="Hanwen Jiang, Shaowei Liu, Jiashun Wang, Xiaolong Wang">
+
+    <title>
+        Hand-Object Contact Consistency Reasoning for Human Grasps Generation
+    </title>
+    <!-- Bootstrap core CSS -->
+    <!--link href="bootstrap.min.css" rel="stylesheet"-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="offcanvas.css" rel="stylesheet">
+    <!--    <link rel="icon" href="img/favicon.gif" type="image/gif">-->
+</head>
+
+<body>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container"></div>
+    <h2>Hand-Object Contact Consistency Reasoning<br>for Human Grasps Generation</h2>
+    <hr>
+    <p class="authors">
+        <a href="https://hwjiang1510.github.io/">Hanwen Jiang*</a>,&emsp;
+        <a href="https://stevenlsw.github.io/">Shaowei Liu*</a>,&emsp;
+        <a href="https://github.com/jiashunwang">Jiashun Wang</a>,&emsp;
+        <a href="https://xiaolonw.github.io/">Xiaolong Wang</a>
+    </p>
+    <h5>ICCV 2021 (Oral)</h5>
+    <div class="btn-group" role="group" aria-label="Top menu">
+        <a class="btn btn-primary" style="background-color: #0793f0" href="https://arxiv.org/pdf/2104.03304.pdf">Paper</a>
+        <a class="btn btn-primary" style="background-color: #4da9fa" href="https://github.com/hwjiang1510/GraspTTA">Code</a>
+        <a class="btn btn-primary" style="background-color: #0793f0" href="./sources/slides.pdf">Slides</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="section">
+        <div class="row">
+            <div class="col-sm-12">
+                <img src="./sources/teaser-min.gif" style="width:100%">
+            </div>
+        </div>
+        <hr>
+    </div>
+
+    <div class="section">
+        <div class="vcontainer">
+            <iframe class='video' src="https://www.youtube.com/embed/zGVLVXZoVZs" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </div>
+        <hr>
+        <p>
+            While predicting robot grasps with parallel jaw grippers have been well studied and widely applied in robot manipulation tasks, the study on natural human grasp generation with a multi-finger hand remains a very challenging problem. In this paper, we propose to generate human grasps given a 3D object in the world. Our key observation is that it is crucial to model the consistency between the hand contact points and object contact regions. That is, we encourage the prior hand contact points to be close to the object surface and the object common contact regions to be touched by the hand at the same time. Based on the hand-object contact consistency, we design novel objectives in training the human grasp generation model and also a new self-supervised task which allows the grasp generation network to be adjusted even during test time. Our experiments show significant improvement in human grasp generation over state-of-the-art approaches by a large margin. More interestingly, by optimizing the model during test time with the self-supervised task, it helps achieve larger gain on unseen and out-of-domain objects.   <hr>
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Input and Output</h2>
+        <hr>
+        <div class="row align-items-center">
+            <div class="col-sm-12">
+                <img src="./sources/input_output.jpg" style="width:95%">
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Test-Time Adaptation</h2>
+        <hr>
+        <div class="row align-items-center">
+            <div class="col-sm-12 text-center">
+                <h4>Pipeline</h4>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-sm-12">
+                <video width="100%" playsinline autoplay loop preload muted>
+                    <source src="./gif/tta_pipeline.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-sm-12 text-center">
+                <h4>Visualization</h4>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-sm-12">
+                <video width="100%" playsinline autoplay loop preload muted>
+                    <source src="./gif/tta_vis.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section">
+        <h2>Results on Obman (in-domain objects)</h2>
+        <hr>
+        <p>
+            Note that grasp generation is multi-modal, and generated grasps can be different from GT. Ideal grasps should be natural and physically plausible.
+        </p>
+        <div class="row align-items-center">
+            <div class="col-sm-3 text-center">
+                <h4>GT</h4>
+            </div>
+            <div class="col-sm-3 text-center">
+                <h4>Ours</h4>
+            </div>
+            <div class="col-sm-3 text-center">
+                <h4>GT</h4>
+            </div>
+            <div class="col-sm-3 text-center">
+                <h4>Ours</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="./gif/gt_ho_14-min.gif" style="width:95%">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gif/pred_ho_14-min.gif" style="width:95%">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gif/gt_ho_16-min.gif" style="width:95%">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gif/pred_ho_16-min.gif" style="width:95%">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="./gif/gt_ho_18-min.gif" style="width:95%">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gif/pred_ho_18-min.gif" style="width:95%">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gif/gt_ho_6-min.gif" style="width:95%">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gif/pred_ho_6-min.gif" style="width:95%">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="./gif/gt_ho_17-min.gif" style="width:95%">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gif/pred_ho_17-min.gif" style="width:95%">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gif/gt_ho_15-min.gif" style="width:95%">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gif/pred_ho_15-min.gif" style="width:95%">
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Results on HO-3D(out-of-domain objects)</h2>
+        <hr>
+        <div class="row align-items-center">
+            <div class="col-sm-12 text-center">
+                <h4>Diverse Grasps</h4>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-sm-3 text-center">
+                <h4>Object 1</h4>
+            </div>
+            <div class="col-sm-3 text-center">
+                <h4>Object 2</h4>
+            </div>
+            <div class="col-sm-3 text-center">
+                <h4>Object 3</h4>
+            </div>
+            <div class="col-sm-3 text-center">
+                <h4>Object 4</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="./gif/out_pred_ho_0-min.gif" style="width:95%">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gif/out_pred_ho_1-min.gif" style="width:95%">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gif/out_pred_ho_2-min.gif" style="width:95%">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gif/out_pred_ho_3-min.gif" style="width:95%">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="./gif/out_pred_ho_4-min.gif" style="width:100%">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gif/out_pred_ho_5-min.gif" style="width:100%">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gif/out_pred_ho_6-min.gif" style="width:95%">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gif/out_pred_ho_7-min.gif" style="width:95%">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="./gif/out_pred_ho_8-min.gif" style="width:95%">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gif/out_pred_ho_9-min.gif" style="width:95%">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gif/out_pred_ho_10-min.gif" style="width:95%">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gif/out_pred_ho_11-min.gif" style="width:95%">
+            </div>
+        </div>
+        <!--
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="./gif/out_pred_ho_12.gif" style="width:95%">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gif/out_pred_ho_13.gif" style="width:95%">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gif/out_pred_ho_14.gif" style="width:95%">
+            </div>
+            <div class="col-sm-3">
+                <img src="./gif/out_pred_ho_15.gif" style="width:95%">
+            </div>
+        </div>
+        -->
+        <!--
+        <div class="row align-items-center">
+            <div class="col-sm-12 text-center">
+                <h4>More Diverse Grasps</h4>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-sm-12 text-center">
+                We show 5 different grasps for each object in a row.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <img src="./sources/diversity.jpg" style="width:100%">
+            </div>
+        </div>
+        -->
+    </div>
+
+    <div class="section">
+        <h2>Grasp Displacement in Simulation</h2>
+        <hr>
+        <div class="row align-items-center">
+            <div class="col-sm-12">
+                <video width="100%" playsinline autoplay loop preload muted>
+                    <source src="./gif/simu.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section">
+        <h2>BibTeX</h2>
+        <hr>
+        <div class="bibtexsection">
+        @inproceedings{jiang2021graspTTA,
+          title={Hand-Object Contact Consistency Reasoning for Human Grasps Generation},
+          author={Jiang, Hanwen and Liu, Shaowei and Wang, Jiashun and Wang, Xiaolong},
+          booktitle={Proceedings of the International Conference on Computer Vision},
+          year={2021}
+        }
+        </div>
+    </div>
+
+	<hr>
+
+	<footer>
+        <p><span style="color: #AAAAAA">Acknowledgment: website template from <a href="https://vsitzmann.github.io/siren/">SIREN</a></span></p>
+    </footer>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
